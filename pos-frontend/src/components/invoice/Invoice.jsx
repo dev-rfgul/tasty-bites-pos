@@ -1,35 +1,70 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import { FaCheck } from "react-icons/fa6";
+import logo from '../../assets/images/logo-recipt.png';
+const WEBSITE_URL = "https://devrfgul.vercel.app"; // set your site URL
 
 const Invoice = ({ orderInfo, setShowInvoice }) => {
   const invoiceRef = useRef(null);
   const handlePrint = () => {
     const printContent = invoiceRef.current.innerHTML;
-    const WinPrint = window.open("", "", "width=900,height=650");
+    const logoUrl = logo; // resolved by bundler
+    const WinPrint = window.open("", "", "width=400,height=800");
 
     WinPrint.document.write(`
             <html>
               <head>
+                <meta charset="utf-8" />
                 <title>Order Receipt</title>
                 <style>
-                  body { font-family: Arial, sans-serif; padding: 20px; }
-                  .receipt-container { width: 300px; border: 1px solid #ddd; padding: 10px; }
-                  h2 { text-align: center; }
+                  /* Thermal receipt sizing: change 80mm -> 58mm if needed */
+                  @page { size: 80mm auto; margin: 3mm; }
+                  html, body { margin: 0; padding: 0; }
+                  body { font-family: Arial, sans-serif; color: #111; -webkit-print-color-adjust: exact; }
+                  .receipt-container { width: 80mm; box-sizing: border-box; padding: 6px; font-size: 12px; margin: 0 auto; }
+                  .logo { display:block; margin: 0 auto 6px; max-width: 70mm; height: auto; }
+                  h2 { text-align:center; margin:6px 0; font-size:14px; }
+                  .website { text-align:center; color:#6b7280; font-size:10px; margin-bottom:6px; }
+                  .items li { list-style:none; display:flex; justify-content:space-between; margin:4px 0; }
+                  .border-top { border-top: 1px dashed #ccc; margin-top:6px; padding-top:6px; }
+                  @media print {
+                    body { -webkit-print-color-adjust: exact; }
+                    .receipt-container { width: 80mm; }
+                  }
                 </style>
               </head>
               <body>
-                ${printContent}
+                <div class="receipt-container">
+                  <div>${printContent}</div>
+                  <p class="website"><a href="${WEBSITE_URL}">${WEBSITE_URL}</a></p>
+                </div>
+
+                <script>
+                  // Wait for images/resources to load before printing
+                  function whenReady(cb) {
+                    const imgs = Array.from(document.images);
+                    if (!imgs.length) return cb();
+                    let loaded = 0;
+                    imgs.forEach(img => {
+                      if (img.complete) {
+                        loaded++;
+                      } else {
+                        img.addEventListener('load', () => { loaded++; if (loaded === imgs.length) cb(); });
+                        img.addEventListener('error', () => { loaded++; if (loaded === imgs.length) cb(); });
+                      }
+                    });
+                    if (loaded === imgs.length) cb();
+                  }
+                  whenReady(function(){
+                    setTimeout(function(){ window.print(); window.close(); }, 300);
+                  });
+                </script>
               </body>
             </html>
           `);
 
     WinPrint.document.close();
     WinPrint.focus();
-    setTimeout(() => {
-      WinPrint.print();
-      WinPrint.close();
-    }, 1000);
   };
 
   return (
@@ -38,6 +73,15 @@ const Invoice = ({ orderInfo, setShowInvoice }) => {
         {/* Receipt Content for Printing */}
 
         <div ref={invoiceRef} className="p-4">
+          {/* add logo visible in modal and printed HTML */}
+          <div className="flex justify-center mb-2">
+            <img
+              src={logo}
+              alt="Logo"
+              className="w-24 h-auto object-contain logo"
+            />
+          </div>
+
           {/* Receipt Header */}
           <div className="flex justify-center mb-4">
             <motion.div
@@ -59,6 +103,18 @@ const Invoice = ({ orderInfo, setShowInvoice }) => {
 
           <h2 className="text-xl font-bold text-center mb-2">Order Receipt</h2>
           <p className="text-gray-600 text-center">Thank you for your order!</p>
+
+          {/* website url */}
+          <p className="website">
+            <a
+              href={WEBSITE_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="underline text-sm text-gray-600"
+            >
+              {WEBSITE_URL}
+            </a>
+          </p>
 
           {/* Order Details */}
 
