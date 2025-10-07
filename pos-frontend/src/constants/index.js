@@ -1,79 +1,35 @@
-import butterChicken from '../assets/images/butter-chicken-4.jpg';
-import palakPaneer from '../assets/images/Saag-Paneer-1.jpg';
-import biryani from '../assets/images/hyderabadibiryani.jpg';
-import masalaDosa from '../assets/images/masala-dosa.jpg';
-import choleBhature from '../assets/images/chole-bhature.jpg';
-import rajmaChawal from '../assets/images/rajma-chawal-1.jpg';
-import paneerTikka from '../assets/images/paneer-tika.webp';
-import gulabJamun from '../assets/images/gulab-jamun.webp';
-import pooriSabji from '../assets/images/poori-sabji.webp';
-import roganJosh from '../assets/images/rogan-josh.jpg';
-
-import { color } from 'framer-motion';
-
 export const popularDishes = [
     {
       id: 1,
-      image: butterChicken,
-      name: 'Butter Chicken',
-      numberOfOrders: 250,
+      image: null, // Placeholder for image
+      name: 'Chicken Biryani',
+      numberOfOrders: 500,
     },
     {
       id: 2,
-      image: palakPaneer,
-      name: 'Palak Paneer',
-      numberOfOrders: 190,
+      image: null, // Placeholder for image
+      name: 'Beef Nihari',
+      numberOfOrders: 400,
     },
     {
       id: 3,
-      image: biryani,
-      name: 'Hyderabadi Biryani',
-      numberOfOrders: 300,
+      image: null, // Placeholder for image
+      name: 'Chicken Karahi',
+      numberOfOrders: 450,
     },
     {
       id: 4,
-      image: masalaDosa,
-      name: 'Masala Dosa',
-      numberOfOrders: 220,
+      image: null, // Placeholder for image
+      name: 'Haleem',
+      numberOfOrders: 300,
     },
     {
       id: 5,
-      image: choleBhature,
-      name: 'Chole Bhature',
-      numberOfOrders: 270,
+      image: null, // Placeholder for image
+      name: 'Seekh Kebab',
+      numberOfOrders: 350,
     },
-    {
-      id: 6,
-      image: rajmaChawal,
-      name: 'Rajma Chawal',
-      numberOfOrders: 180,
-    },
-    {
-      id: 7,
-      image: paneerTikka,
-      name: 'Paneer Tikka',
-      numberOfOrders: 210,
-    },
-    {
-      id: 8,
-      image: gulabJamun,
-      name: 'Gulab Jamun',
-      numberOfOrders: 310,
-    },
-    {
-      id: 9,
-      image: pooriSabji,
-      name: 'Poori Sabji',
-      numberOfOrders: 140,
-    },
-    {
-      id: 10,
-      image: roganJosh,
-      name: 'Rogan Josh',
-      numberOfOrders: 160,
-    },
-  ];
-
+];
 
 export const tables = [
     { id: 1, name: "Table 1", status: "Booked", initial: "AM", seats: 4 },
@@ -86,167 +42,81 @@ export const tables = [
     { id: 8, name: "Table 8", status: "Available", initial: "DP", seats: 5 },
     { id: 9, name: "Table 9", status: "Booked", initial: "NK", seats: 6 },
     { id: 10, name: "Table 10", status: "Available", initial: "SB", seats: 6 },
-    { id: 11, name: "Table 11", status: "Booked", initial: "GT", seats: 4 },
-    { id: 12, name: "Table 12", status: "Available", initial: "JS", seats: 6 },
-    { id: 13, name: "Table 13", status: "Booked", initial: "EK", seats: 2 },
-    { id: 14, name: "Table 14", status: "Available", initial: "QN", seats: 6 },
-    { id: 15, name: "Table 15", status: "Booked", initial: "TW", seats: 3 }
-  ];
-  
+];
+
 export const startersItem = [
     {
       id: 1,
-      name: "Paneer Tikka",
-      price: 250,
+      name: "Samosa",
+      price: 50,
       category: "Vegetarian"
     },
     {
       id: 2,
-      name: "Chicken Tikka",
-      price: 300,
-      category: "Non-Vegetarian"
+      name: "Pakora",
+      price: 40,
+      category: "Vegetarian"
     },
     {
       id: 3,
-      name: "Tandoori Chicken",
-      price: 350,
+      name: "Seekh Kebab",
+      price: 150,
       category: "Non-Vegetarian"
     },
     {
       id: 4,
-      name: "Samosa",
-      price: 100,
-      category: "Vegetarian"
-    },
-    {
-      id: 5,
-      name: "Aloo Tikki",
+      name: "Shami Kebab",
       price: 120,
-      category: "Vegetarian"
+      category: "Non-Vegetarian"
     },
-    {
-      id: 6,
-      name: "Hara Bhara Kebab",
-      price: 220,
-      category: "Vegetarian"
-    }
-  ];
-  
+];
+
 export const mainCourse = [
   {
     id: 1,
-    name: "Butter Chicken",
-    price: 400,
+    name: "Chicken Biryani",
+    price: 250,
     category: "Non-Vegetarian"
   },
   {
     id: 2,
-    name: "Paneer Butter Masala",
-    price: 350,
-    category: "Vegetarian"
+    name: "Beef Nihari",
+    price: 300,
+    category: "Non-Vegetarian"
   },
   {
     id: 3,
-    name: "Chicken Biryani",
-    price: 450,
+    name: "Chicken Karahi",
+    price: 400,
     category: "Non-Vegetarian"
   },
   {
     id: 4,
-    name: "Dal Makhani",
-    price: 180,
-    category: "Vegetarian"
-  },
-  {
-    id: 5,
-    name: "Kadai Paneer",
-    price: 300,
-    category: "Vegetarian"
-  },
-  {
-    id: 6,
-    name: "Rogan Josh",
-    price: 500,
+    name: "Haleem",
+    price: 200,
     category: "Non-Vegetarian"
-  }
+  },
 ];
 
 export const beverages = [
   {
     id: 1,
-    name: "Masala Chai",
-    price: 50,
+    name: "Chai",
+    price: 30,
     category: "Hot"
   },
   {
     id: 2,
-    name: "Lemon Soda",
+    name: "Lassi",
     price: 80,
     category: "Cold"
   },
   {
     id: 3,
-    name: "Mango Lassi",
-    price: 120,
+    name: "Rooh Afza",
+    price: 50,
     category: "Cold"
   },
-  {
-    id: 4,
-    name: "Cold Coffee",
-    price: 150,
-    category: "Cold"
-  },
-  {
-    id: 5,
-    name: "Fresh Lime Water",
-    price: 60,
-    category: "Cold"
-  },
-  {
-    id: 6,
-    name: "Iced Tea",
-    price: 100,
-    category: "Cold"
-  }
-];
-
-export const soups = [
-  {
-    id: 1,
-    name: "Tomato Soup",
-    price: 120,
-    category: "Vegetarian"
-  },
-  {
-    id: 2,
-    name: "Sweet Corn Soup",
-    price: 130,
-    category: "Vegetarian"
-  },
-  {
-    id: 3,
-    name: "Hot & Sour Soup",
-    price: 140,
-    category: "Vegetarian"
-  },
-  {
-    id: 4,
-    name: "Chicken Clear Soup",
-    price: 160,
-    category: "Non-Vegetarian"
-  },
-  {
-    id: 5,
-    name: "Mushroom Soup",
-    price: 150,
-    category: "Vegetarian"
-  },
-  {
-    id: 6,
-    name: "Lemon Coriander Soup",
-    price: 110,
-    category: "Vegetarian"
-  }
 ];
 
 export const desserts = [
@@ -258,141 +128,37 @@ export const desserts = [
   },
   {
     id: 2,
-    name: "Kulfi",
-    price: 150,
+    name: "Kheer",
+    price: 120,
     category: "Vegetarian"
   },
   {
     id: 3,
-    name: "Chocolate Lava Cake",
-    price: 250,
+    name: "Jalebi",
+    price: 80,
     category: "Vegetarian"
   },
-  {
-    id: 4,
-    name: "Ras Malai",
-    price: 180,
-    category: "Vegetarian"
-  }
 ];
-
-export const pizzas = [
-  {
-    id: 1,
-    name: "Margherita Pizza",
-    price: 350,
-    category: "Vegetarian"
-  },
-  {
-    id: 2,
-    name: "Veg Supreme Pizza",
-    price: 400,
-    category: "Vegetarian"
-  },
-  {
-    id: 3,
-    name: "Pepperoni Pizza",
-    price: 450,
-    category: "Non-Vegetarian"
-  }
-];
-
-export const alcoholicDrinks = [
-  {
-    id: 1,
-    name: "Beer",
-    price: 200,
-    category: "Alcoholic"
-  },
-  {
-    id: 2,
-    name: "Whiskey",
-    price: 500,
-    category: "Alcoholic"
-  },
-  {
-    id: 3,
-    name: "Vodka",
-    price: 450,
-    category: "Alcoholic"
-  },
-  {
-    id: 4,
-    name: "Rum",
-    price: 350,
-    category: "Alcoholic"
-  },
-  {
-    id: 5,
-    name: "Tequila",
-    price: 600,
-    category: "Alcoholic"
-  },
-  {
-    id: 6,
-    name: "Cocktail",
-    price: 400,
-    category: "Alcoholic"
-  }
-];
-
-export const salads = [
-  {
-    id: 1,
-    name: "Caesar Salad",
-    price: 200,
-    category: "Vegetarian"
-  },
-  {
-    id: 2,
-    name: "Greek Salad",
-    price: 250,
-    category: "Vegetarian"
-  },
-  {
-    id: 3,
-    name: "Fruit Salad",
-    price: 150,
-    category: "Vegetarian"
-  },
-  {
-    id: 4,
-    name: "Chicken Salad",
-    price: 300,
-    category: "Non-Vegetarian"
-  },
-  {
-    id: 5,
-    name: "Tuna Salad",
-    price: 350,
-  
-  }
-];
-
 
 export const menus = [
   { id: 1, name: "Starters", bgColor: "#b73e3e" ,icon: "🍲", items: startersItem },
   { id: 2, name: "Main Course", bgColor: "#5b45b0" ,icon: "🍛", items: mainCourse },
   { id: 3, name: "Beverages", bgColor: "#7f167f" ,icon: "🍹", items: beverages },
-  { id: 4, name: "Soups", bgColor: "#735f32" ,icon: "🍜", items: soups },
-  { id: 5, name: "Desserts", bgColor: "#1d2569" ,icon: "🍰", items: desserts },
-  { id: 6, name: "Pizzas", bgColor: "#285430" ,icon: "🍕", items: pizzas },
-  { id: 7, name: "Alcoholic Drinks", bgColor: "#b73e3e" ,icon: "🍺", items: alcoholicDrinks },
-  { id: 8, name: "Salads", bgColor: "#5b45b0" ,icon: "🥗", items: salads }
-]
-
-export const metricsData = [
-  { title: "Revenue", value: "₹50,846.90", percentage: "12%", color: "#025cca", isIncrease: false },
-  { title: "Outbound Clicks", value: "10,342", percentage: "16%", color: "#02ca3a", isIncrease: true },
-  { title: "Total Customer", value: "19,720", percentage: "10%", color: "#f6b100", isIncrease: true },
-  { title: "Event Count", value: "20,000", percentage: "10%", color: "#be3e3f", isIncrease: false },
+  { id: 4, name: "Desserts", bgColor: "#1d2569" ,icon: "🍰", items: desserts },
 ];
 
 export const itemsData = [
   { title: "Total Categories", value: "8", percentage: "12%", color: "#5b45b0", isIncrease: false },
   { title: "Total Dishes", value: "50", percentage: "12%", color: "#285430", isIncrease: true },
   { title: "Active Orders", value: "12", percentage: "12%", color: "#735f32", isIncrease: true },
-  { title: "Total Tables", value: "10", color: "#7f167f"}
+  { title: "Total Tables", value: "10", color: "#7f167f" }
+];
+
+export const metricsData = [
+  { title: "Revenue", value: "₨50,846.90", percentage: "12%", color: "#025cca", isIncrease: false },
+  { title: "Outbound Clicks", value: "10,342", percentage: "16%", color: "#02ca3a", isIncrease: true },
+  { title: "Total Customer", value: "19,720", percentage: "10%", color: "#f6b100", isIncrease: true },
+  { title: "Event Count", value: "20,000", percentage: "10%", color: "#be3e3f", isIncrease: false },
 ];
 
 export const orders = [
